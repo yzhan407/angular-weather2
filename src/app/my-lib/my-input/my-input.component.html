@@ -1,0 +1,21 @@
+<mat-form-field
+  class="my-input-form-field"
+  appearance="outline"
+  [ngStyle]="{ width: width ? width : 'inherit' }"
+>
+  <!-- TODO: add only characters directive -->
+  <input matInput type="text" [formControl]="control" />
+  <button
+    *ngIf="control.value"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="control.setValue('')"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-error *ngIf="control.errors">
+    <!-- TODO: add logic to change error message depending on errors -->
+    <span>City not found</span>
+  </mat-error>
+</mat-form-field>
