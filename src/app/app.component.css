@@ -1,0 +1,8 @@
+.weather-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.weather-main-container :first-child {
+  width: 40%;
+}
