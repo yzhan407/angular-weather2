@@ -1,6 +1,18 @@
+@use '@angular/material' as mat;
+@import "./weather-icon/css/weather-icons-wind.css";
+@import "./weather-icon/css/weather-icons-wind.min.css";
+@import "./weather-icon/css/weather-icons.css";
+@import "./weather-icon/css/weather-icons.min.css";
 @import "~@angular/material/theming";
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// Plus imports for other components in your app.
 
-@include mat-core();
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
 
 // LIGHT
 $custom-app-light-primary: mat-palette(mat.$indigo-palette);
