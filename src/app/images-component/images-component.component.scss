@@ -1,0 +1,53 @@
+$image-contain-width: 180px;
+$degree-width: 14px;
+$total-container-width: $image-contain-width + $degree-width;
+.time-container {
+  width: $total-container-width;
+  text-align: center;
+  opacity: 0.5;
+  font-weight: 100;
+  font-size: 20px;
+}
+.weather-images-container {
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: $total-container-width;
+}
+.degree-ind {
+  padding-top: 50px;
+  width: $degree-width;
+}
+.weather-images-container div:first-child {
+  width: $image-contain-width;
+}
+.text-desc {
+  width: $image-contain-width;
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  padding-top: 18px;
+  letter-spacing: 2px;
+}
+.humid-and-wind {
+  width: $total-container-width;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-top: 20px;
+}
+.humid-and-wind div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.humid-and-wind div div:first-child {
+  font-weight: 100;
+  opacity: 0.5;
+}
+.humid-and-wind div div:nth-child(2) {
+  font-weight: bold;
+  padding-top: 10px;
+}
