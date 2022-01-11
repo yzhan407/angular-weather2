@@ -6,3 +6,14 @@
 .weather-main-container :first-child {
   width: 40%;
 }
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.input-container :first-child {
+  padding: 10px;
+  padding-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
