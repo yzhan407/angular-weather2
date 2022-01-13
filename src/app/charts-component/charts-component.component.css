@@ -1,0 +1,15 @@
+.chart-main-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.widget-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+}
+.widget-container div {
+  display: flex;
+  flex-direction: column;
+}

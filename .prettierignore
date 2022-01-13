@@ -47,3 +47,6 @@ Thumbs.db
 
 # All json
 *.json
+
+# ignore api-key
+api-key.ts

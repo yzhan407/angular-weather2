@@ -1,13 +1,20 @@
-<div class="input-container">
-  <div>
-    <span>Your City</span>
+<div class="main-container">
+  <div class="input-container">
+    <div>
+      <span>Your City</span>
+    </div>
+    <div>
+      <app-my-input [control]="city" [width]="'180px'"></app-my-input>
+    </div>
   </div>
-  <div>
-    <app-my-input [control]="city" [width]="'180px'"></app-my-input>
+  <!-- placeholder for chart.js and weather images assets -->
+  <div class="weather-main-container" *ngIf="weatherRes">
+    <div>
+      <app-images-component [weatherData]="imagesData"></app-images-component>
+    </div>
+    <div><app-charts-component></app-charts-component></div>
   </div>
-</div>
-<!-- placeholder for chart.js and weather images assets -->
-<div class="weather-main-container">
-  <div><app-images-component></app-images-component></div>
-  <div><app-charts-component></app-charts-component></div>
+  <div class="wait-spinner" *ngIf="city.status === 'PENDING'">
+    <mat-spinner></mat-spinner>
+  </div>
 </div>

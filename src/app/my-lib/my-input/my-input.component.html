@@ -16,6 +16,7 @@
   </button>
   <mat-error *ngIf="control.errors">
     <!-- TODO: add logic to change error message depending on errors -->
-    <span>City not found</span>
+    <span *ngIf="control.hasError('locationError')">City not found</span>
+    <span *ngIf="control.hasError('weatherError')">Weather Error</span>
   </mat-error>
 </mat-form-field>

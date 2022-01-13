@@ -8,6 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImagesComponentComponent } from './images-component/images-component.component';
 import { ChartsComponentComponent } from './charts-component/charts-component.component';
 import { NgChartsModule } from './ng2-charts/ng2-chart.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BackendCallService } from './backend-call.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -20,10 +23,12 @@ import { NgChartsModule } from './ng2-charts/ng2-chart.module';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MyLibModule,
     NgChartsModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [BackendCallService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

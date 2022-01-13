@@ -1,19 +1,26 @@
-<div class="time-container">time placeholder</div>
+<div class="time-container">{{ time | date: "h:mm a, EE, MMMM d, y" }}</div>
 <div class="weather-images-container">
   <div>
-    <i class="wi wi-night-sleet" style="font-size: 80px; margin: 15px"></i
-    ><span style="font-size: 40px; font-weight: bolder">72</span>
+    <i
+      class="wi"
+      *ngIf="weatherData"
+      [class]="'wi-owm-' + weatherData.id"
+      style="font-size: 80px; margin: 15px"
+    ></i
+    ><span style="font-size: 40px; font-weight: bolder">{{
+      weatherData?.temp | number: "1.0-0"
+    }}</span>
   </div>
   <div class="degree-ind">&#176;F</div>
 </div>
-<div class="text-desc">Cloudy</div>
+<div class="text-desc">{{ weatherData?.main }}</div>
 <div class="humid-and-wind">
   <div class="humid">
     <div>Humidity</div>
-    <div>45%</div>
+    <div>{{ weatherData?.humidity }}%</div>
   </div>
   <div class="wind">
     <div>Wind Speed</div>
-    <div>19.2 km/h</div>
+    <div>{{ weatherData?.wind_speed }} miles/h</div>
   </div>
 </div>

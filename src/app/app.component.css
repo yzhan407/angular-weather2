@@ -17,3 +17,7 @@
   font-size: 16px;
   font-weight: bold;
 }
+.wait-spinner mat-spinner {
+  width: 100%;
+  margin: auto;
+}
