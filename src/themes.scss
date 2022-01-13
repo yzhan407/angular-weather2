@@ -1,7 +1,5 @@
 @use '@angular/material' as mat;
-@import "./weather-icon/css/weather-icons-wind.css";
 @import "./weather-icon/css/weather-icons-wind.min.css";
-@import "./weather-icon/css/weather-icons.css";
 @import "./weather-icon/css/weather-icons.min.css";
 @import "~@angular/material/theming";
 // Custom Theming for Angular Material
@@ -75,4 +73,26 @@ $custom-app-dark-theme: mat-dark-theme(
 // remove input top hint(centerlize input text)
 .mat-form-field-infix {
   border-top: 0;
+}
+
+// material style border-shadow, from https://codepen.io/dbox/pen/RawBEW
+@mixin material-shadow($z-depth: 1, $strength: 1, $color: black) {
+  @if $z-depth == 1 {
+    box-shadow: 0 1px 3px rgba($color, $strength * 0.14), 0 1px 2px rgba($color, $strength * 0.24);
+  }
+  @if $z-depth == 2 {
+    box-shadow: 0 3px 6px rgba($color, $strength * 0.16), 0 3px 6px rgba($color, $strength * 0.23);
+  }  
+  @if $z-depth == 3 {
+    box-shadow: 0 10px 20px rgba($color, $strength * 0.19), 0 6px 6px rgba($color, $strength * 0.23);
+  }    
+  @if $z-depth == 4 {
+    box-shadow: 0 15px 30px rgba($color, $strength * 0.25), 0 10px 10px rgba($color, $strength * 0.22);    
+  }
+  @if $z-depth == 5{
+    box-shadow: 0 20px 40px rgba($color, $strength * 0.30), 0 15px 12px rgba($color, $strength * 0.22);   
+  }
+  @if ($z-depth < 1) or ($z-depth > 5) {
+    @warn "$z-depth must be between 1 and 5";
+  }
 }
