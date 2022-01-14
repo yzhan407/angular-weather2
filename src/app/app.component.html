@@ -11,9 +11,9 @@
     <!-- placeholder for chart.js and weather images assets -->
     <div class="weather-main-container" *ngIf="weatherRes">
       <div>
-        <app-images-component [weatherData]="imagesData"></app-images-component>
+        <app-images-component *ngIf="imagesData" [weatherData]="imagesData"></app-images-component>
       </div>
-      <div><app-charts-component [chartData]="chartData" [hourlyData]="hourlyData"></app-charts-component></div>
+      <div><app-charts-component *ngIf="chartData" [chartData]="chartData" [hourlyData]="hourlyData"></app-charts-component></div>
     </div>
     <div class="wait-spinner" *ngIf="city.status === 'PENDING'">
       <mat-spinner></mat-spinner>

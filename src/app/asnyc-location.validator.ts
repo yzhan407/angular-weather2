@@ -19,6 +19,7 @@ export function locationValidator(
           if (value && value.hasOwnProperty('length') && value.length > 0) {
             const lat = value[0].lat;
             const lon = value[0].lon;
+            backend.position.next({lat: lat, lon:lon});
             return backend.getWeather({
               lat: lat,
               lon: lon,

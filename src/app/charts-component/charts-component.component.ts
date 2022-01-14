@@ -1,6 +1,7 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartOptions, ChartType, LineControllerChartOptions, LineOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-charts-component',
@@ -8,6 +9,7 @@ import { BaseChartDirective } from 'ng2-charts';
   styleUrls: ['./charts-component.component.css'],
 })
 export class ChartsComponentComponent implements OnInit {
+  @Output() dateClick: EventEmitter<Date> = new EventEmitter()
   @Input() chartData: Array<{
     weather: Array<{id: string}>;
     temp: {day: string};
@@ -137,5 +139,8 @@ export class ChartsComponentComponent implements OnInit {
   // };
 
   // public lineChartType: ChartType = 'line';
+  onClickDate(i: number){
+    this.dateClick.emit(this.dateArr[i]);
+  }
 
 }

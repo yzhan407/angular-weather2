@@ -10,9 +10,15 @@
   text-align: center;
   justify-content: space-between;
 }
-.widget-container div {
+.widget-container>div {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
+}
+.widget-container>div:focus{
+  background-color: cornflowerblue;
 }
 .supporting-div{
   height: 15px;

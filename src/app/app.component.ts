@@ -18,6 +18,7 @@ export class AppComponent implements OnInit, OnDestroy {
   imagesData: any = null;
   chartData: any = null;
   hourlyData: any = null;
+  positonData: any = null;
   constructor(private backend: BackendCallService) {
     this.landingGroup = new FormGroup({
       city: (this.city = new FormControl('', {
@@ -38,6 +39,12 @@ export class AppComponent implements OnInit, OnDestroy {
         this.chartData = this.weatherRes.daily;
         this.hourlyData = this.weatherRes.hourly;
       });
+      this.backend.position.pipe(takeUntil(this.ngUnSub))
+      .subscribe((position)=> {
+        if(position){
+          this.positonData = position;
+        }
+      })
   }
   ngOnInit(): void {
     this.city.valueChanges.subscribe((value) => {
