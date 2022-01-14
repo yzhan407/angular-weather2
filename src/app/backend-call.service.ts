@@ -9,6 +9,7 @@ export class BackendCallService {
   private geocodeApi = `https://api.openweathermap.org/geo/1.0/direct?q=`;
   private apiKey = apikey;
   public weatherResult = new Subject();
+  public position = new Subject();
   constructor(private http: HttpClient) {}
   // TODO; typecast return object
   getWeather(requestData: {
@@ -34,5 +35,8 @@ export class BackendCallService {
     return this.http.get(
       this.geocodeApi + locationName + '&limit=1&appid=' + this.apiKey
     );
+  }
+  getHourlyWeather(location:{lat: number, lon: number}): Observable<any> {
+    return this.http.get(`pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${this.apiKey}`)
   }
 }
