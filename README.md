@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 Using [open weather map](https://openweathermap.org/), [ng2-charts](https://github.com/valor-software/ng2-charts), 
-[weather icon](https://erikflowers.github.io/weather-icons/), [material design](https://material.angular.io/)
+[weather icon](https://erikflowers.github.io/weather-icons/), [material design](https://material.angular.io/),
 [prettier](https://prettier.io/)
 
 For open weather map, used one call API, but there are only 48hours weather in this API
