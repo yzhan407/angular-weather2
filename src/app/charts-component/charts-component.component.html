@@ -1,38 +1,45 @@
 <div class="chart-main-container">
-  chart placeholder
-  <div></div>
+  <div class='title'>Temperature</div>
+  <div class='supporting-div'></div>
+  <canvas baseChart width="500" height="125" 
+    [data]="myHourlyData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend"
+    [type]="lineChartType"
+    [plugins]="lineChartPlugins"
+    ></canvas>
   <div class="widget-container">
     <div>
-      <div>Today</div>
+      <div>{{dateArr[0] | date: 'EE d'}}</div>
       <div>
-        <i class="wi wi-night-sleet" style="font-size: 80px; margin: 15px"></i>
+        <i class="wi" *ngIf="chartData" [class]="'wi-owm-'+chartData[0].weather[0].id" style="font-size: 80px; margin: 15px"></i>
       </div>
       <div>Humidity</div>
-      <div>30%</div>
+      <div>{{chartData[0].humidity}}%</div>
     </div>
     <div>
-      <div>Today</div>
+      <div>{{dateArr[1] | date: 'EE d'}}</div>
       <div>
-        <i class="wi wi-night-sleet" style="font-size: 80px; margin: 15px"></i>
+        <i class="wi" *ngIf="chartData" [class]="'wi-owm-'+chartData[1].weather[0].id" style="font-size: 80px; margin: 15px"></i>
       </div>
       <div>Humidity</div>
-      <div>30%</div>
+      <div>{{chartData[1].humidity}}%</div>
     </div>
     <div>
-      <div>Today</div>
+      <div>{{dateArr[2] | date: 'EE d'}}</div>
       <div>
-        <i class="wi wi-night-sleet" style="font-size: 80px; margin: 15px"></i>
+        <i class="wi" *ngIf="chartData" [class]="'wi-owm-'+chartData[2].weather[0].id" style="font-size: 80px; margin: 15px"></i>
       </div>
       <div>Humidity</div>
-      <div>30%</div>
+      <div>{{chartData[2].humidity}}%</div>
     </div>
     <div>
-      <div>Today</div>
+      <div>{{dateArr[3] | date: 'EE d'}}</div>
       <div>
-        <i class="wi wi-night-sleet" style="font-size: 80px; margin: 15px"></i>
+        <i class="wi" *ngIf="chartData" [class]="'wi-owm-'+chartData[3].weather[0].id" style="font-size: 80px; margin: 15px"></i>
       </div>
       <div>Humidity</div>
-      <div>30%</div>
+      <div>{{chartData[3].humidity}}%</div>
     </div>
   </div>
 </div>

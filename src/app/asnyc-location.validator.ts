@@ -22,7 +22,7 @@ export function locationValidator(
             return backend.getWeather({
               lat: lat,
               lon: lon,
-              part: 'hourly,minutely,alerts',
+              part: 'minutely,alerts',
             });
           } else {
             return of({ locationError: true });

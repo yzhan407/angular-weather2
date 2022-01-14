@@ -7,7 +7,7 @@ import { BackendCallService } from './backend-call.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'angular-weather2';
@@ -17,6 +17,7 @@ export class AppComponent implements OnInit, OnDestroy {
   weatherRes: any = null;
   imagesData: any = null;
   chartData: any = null;
+  hourlyData: any = null;
   constructor(private backend: BackendCallService) {
     this.landingGroup = new FormGroup({
       city: (this.city = new FormControl('', {
@@ -34,6 +35,8 @@ export class AppComponent implements OnInit, OnDestroy {
           humidity: weatherRes.current.humidity,
           wind_speed: weatherRes.current.wind_speed,
         };
+        this.chartData = this.weatherRes.daily;
+        this.hourlyData = this.weatherRes.hourly;
       });
   }
   ngOnInit(): void {
@@ -41,6 +44,8 @@ export class AppComponent implements OnInit, OnDestroy {
       if ((!value && this.weatherRes) || this.city.errors) {
         this.weatherRes = null;
         this.imagesData = null;
+        this.chartData = null;
+        this.hourlyData = null;
       }
     });
   }

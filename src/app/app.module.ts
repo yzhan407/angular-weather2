@@ -7,10 +7,10 @@ import { MyLibModule } from './my-lib/my-lib.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImagesComponentComponent } from './images-component/images-component.component';
 import { ChartsComponentComponent } from './charts-component/charts-component.component';
-import { NgChartsModule } from './ng2-charts/ng2-chart.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BackendCallService } from './backend-call.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
