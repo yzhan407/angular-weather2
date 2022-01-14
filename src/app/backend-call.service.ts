@@ -36,7 +36,9 @@ export class BackendCallService {
       this.geocodeApi + locationName + '&limit=1&appid=' + this.apiKey
     );
   }
-  getHourlyWeather(location:{lat: number, lon: number}): Observable<any> {
-    return this.http.get(`pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${this.apiKey}`)
+  getHourlyWeather(location: { lat: number; lon: number }): Observable<any> {
+    return this.http.get(
+      `pro.openweathermap.org/data/2.5/forecast/hourly?lat=${location.lat}&lon=${location.lon}&appid=${this.apiKey}`
+    );
   }
 }

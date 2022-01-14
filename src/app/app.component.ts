@@ -39,12 +39,13 @@ export class AppComponent implements OnInit, OnDestroy {
         this.chartData = this.weatherRes.daily;
         this.hourlyData = this.weatherRes.hourly;
       });
-      this.backend.position.pipe(takeUntil(this.ngUnSub))
-      .subscribe((position)=> {
-        if(position){
+    this.backend.position
+      .pipe(takeUntil(this.ngUnSub))
+      .subscribe((position) => {
+        if (position) {
           this.positonData = position;
         }
-      })
+      });
   }
   ngOnInit(): void {
     this.city.valueChanges.subscribe((value) => {
