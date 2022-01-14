@@ -1,3 +1,19 @@
+@use "../themes.scss";
+.outer-container{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(179, 229, 252);
+}
+.main-container{
+  position: relative;
+  padding: 20px;
+  width: 900px;
+  height: 400px;
+  margin: auto;
+  background-color: white;
+  @include material-shadow(1);
+  top: calc(calc(100% - 400px) / 2);
+}
 .weather-main-container {
   display: flex;
   flex-direction: row;

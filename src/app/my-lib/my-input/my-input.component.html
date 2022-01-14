@@ -11,8 +11,9 @@
     mat-icon-button
     aria-label="Clear"
     (click)="control.setValue('')"
+    class="clear-button"
   >
-    <mat-icon>close</mat-icon>
+    <mat-icon>close_no_outline</mat-icon>
   </button>
   <mat-error *ngIf="control.errors">
     <!-- TODO: add logic to change error message depending on errors -->
