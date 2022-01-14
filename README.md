@@ -14,3 +14,10 @@ Might change it to the hourly api initially in the future, maybe not(probably no
 <br>
 There are many improvements needed, e.g. there could be a dropdown or auto complete using geocode api<br>
 so when the user type something wrong we can still show the right location in the dropdown
+
+landing page
+<image src="./demo-0.png">
+loading page
+<image src="./demo-pending.png">
+final page
+<image src="./demo-1.png">
